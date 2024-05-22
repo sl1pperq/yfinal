@@ -113,6 +113,10 @@ const checkIfUsersAreSafe = async (req, res, next) => {
 };
 
 const checkIsVoteRequest = async (req, res, next) => {
+    if (req.isVoteRequest) {
+        next();
+        return;
+    }
     if (Object.keys(req.body).length === 1 && req.body.users) {
         req.isVoteRequest = true;
     }
