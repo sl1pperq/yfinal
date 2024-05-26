@@ -1,15 +1,16 @@
 const allowedCors = [
     'https://practicum.yandex.ru',
     'https://students-projects.ru',
-    'localhost:3000',
-    "127.0.0.1:3000",
-    "localhost:3003",
-    "127.0.0.1:3003",
-    "localhost:3002",
-    "127.0.0.1:3002",
+    'http://localhost:3000',
+    "http://127.0.0.1:3000",
+    'http://localhost:3001',
+    "http://127.0.0.1:3001",
+    "http://localhost:3003",
+    "http://127.0.0.1:3003",
+    "http://localhost:3002",
+    "http://127.0.0.1:3002",
     'https://front.banjosurf.ru'
 ];
-
 
 function cors(req, res, next) {
     const {origin} = req.headers;
