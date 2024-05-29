@@ -7,11 +7,11 @@ const {
     createGame,
     findGameById,
     checkIsVoteRequest,
+    checkIfCategoriesAvailable,
     checkIfUsersAreSafe,
     updateGame, deleteGame, findAllGames
 } = require("../middlewares/games");
 const {sendGameCreated, sendGameUpdated, sendGameDeleted, sendAllGames, sendGameById} = require("../controllers/games");
-const {checkIfCategoriesAvaliable} = require("../middlewares/categories");
 
 gamesRouter.get('/games', findAllGames, sendAllGames);
 
@@ -19,6 +19,7 @@ gamesRouter.post(
     "/games",
     findAllGames,
     checkIsGameExists,
+    checkIfCategoriesAvailable,
     checkEmptyFields,
     createGame,
     sendGameCreated
